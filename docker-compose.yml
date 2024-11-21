@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   mongodb:
-    image: mongo:7.0
+    image: mongo
     container_name: mongodb
     restart: unless-stopped
     environment:
@@ -18,7 +18,7 @@ services:
       - app-network
 
   mongodb_exporter:
-    image: percona/mongodb_exporter:0.40
+    image: percona/mongodb_exporter
     command: ["--collect-all"]
     environment:
       MONGODB_URI: "mongodb://rootuser:rootpass@mongodb:27017"
